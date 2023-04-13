@@ -43,6 +43,7 @@ public class UserController {
      * @param model Model
      * @return ユーザー情報一覧画面
      */
+    // 未登録
     @RequestMapping(value = "/user/add", method = RequestMethod.GET)
     public String displayAdd(Model model) {
         model.addAttribute("userRequest", new UserRequest());
