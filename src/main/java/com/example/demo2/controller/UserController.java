@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.demo2.dto.UserRequest;
 import com.example.demo2.entity.User;
 import com.example.demo2.service.UserService;
 
@@ -35,4 +36,17 @@ public class UserController {
         model.addAttribute("userlist", userlist);
         return "user/list";
     }
+
+    /**
+     * ユーザー新規登録画面を表示
+     * 
+     * @param model Model
+     * @return ユーザー情報一覧画面
+     */
+    @RequestMapping(value = "/user/add", method = RequestMethod.GET)
+    public String displayAdd(Model model) {
+        model.addAttribute("userRequest", new UserRequest());
+        return "user/add";
+    }
+
 }
