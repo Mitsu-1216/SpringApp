@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -47,7 +48,22 @@ public class UserController {
     @RequestMapping(value = "/user/add", method = RequestMethod.GET)
     public String displayAdd(Model model) {
         model.addAttribute("userRequest", new UserRequest());
+        // user/add.htmlを表示
         return "user/add";
+    }
+
+    /**
+     * ユーザー新規登録
+     * 
+     * @param userRequest リクエストデータ
+     * @param model       Model
+     * @return ユーザー情報一覧画面
+     */
+    @RequestMapping(value = "/user/create", method = RequestMethod.POST)
+    public String create(@ModelAttribute UserRequest userRequest, Model model) {
+        // ユーザー情報の登録
+        userService.create(userRequest);
+        return "redirect:/user/list";
     }
 
 }
