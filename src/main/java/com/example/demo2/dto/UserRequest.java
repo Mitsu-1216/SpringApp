@@ -3,7 +3,6 @@ package com.example.demo2.dto;
 import java.io.Serializable;
 
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 import lombok.Data;

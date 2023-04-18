@@ -7,9 +7,14 @@
 <meta charset="utf-8" />
 </head>
 <body>
+    <table>
+        <tr th:if="${validationError}" th:each="error : ${validationError}">
+            <td style="color: red;" th:text="${error}"></td>
+        </tr>
+    </table>
     <h1>ユーザー新規登録</h1>
     <form th:action="@{/user/create}" th:object="${userRequest}"
-        method="post">
+        th:method="post">
         <table>
             <tr>
                 <th class="cell_title">名前</th>
@@ -23,7 +28,7 @@
             </tr>
             <tr>
                 <th class="cell_title">電話番号</th>
-                <th class="cell_required"></th>
+                <th class="cell_required">※</th>
                 <td><input type="text" th:field="*{phone}"></td>
             </tr>
         </table>
