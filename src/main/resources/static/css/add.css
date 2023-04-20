@@ -4,6 +4,7 @@
     background: #d6ebff;
     box-shadow: 0px 0px 0px 10px #d6ebff;
     border: dashed 2px white;
+    display: inline-block;
 }
 .box14 h2 {
     margin: 0; 
