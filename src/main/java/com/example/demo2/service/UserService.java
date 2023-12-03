@@ -51,11 +51,11 @@ public class UserService {
     private User CreateUser(UserRequest userRequest) {
         Date now = new Date();
         User user = new User();
-        user.setName(userRequest.getName());
-        user.setAddress(userRequest.getAddress());
-        user.setPhone(userRequest.getPhone());
-        user.setCreateDate(now);
-        user.setUpdateDate(now);
+//        user.setName(userRequest.getName());
+//        user.setAddress(userRequest.getAddress());
+//        user.setPhone(userRequest.getPhone());
+//        user.setCreateDate(now);
+//        user.setUpdateDate(now);
 
         return user;
     }
